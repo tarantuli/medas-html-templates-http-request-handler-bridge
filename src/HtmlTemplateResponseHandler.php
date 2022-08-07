@@ -5,18 +5,19 @@ declare(strict_types=1);
 namespace Medas\HtmlTemplatesHttpRequestHandlerBridge;
 
 use Medas\HtmlTemplates\TemplateCompiler;
-use Medas\HttpRequestHandler\Request\Request;
-use Medas\HttpRequestHandler\ResponseHandlerManager;
-use Medas\HttpRequestHandler\ResponseHandlers\HtmlHandler;
-use Medas\HttpRequestHandler\ResponseHandlers\ResponseHandler;
-use Medas\HttpRequestHandler\ResponseTypes\Response;
+use Medas\HttpRequestHandler\{Request\Request,
+    ResponseHandlerManager,
+    ResponseHandlers\HtmlHandler,
+    ResponseHandlers\ResponseHandler,
+    ResponseTypes\Response
+};
 use Medas\ServiceManager\Attributes\Service;
 
 #[Service]
 class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
 {
     public function __construct(
-        private TemplateCompiler $templateCompiler,
+        private readonly TemplateCompiler $templateCompiler,
     )
     {
     }
@@ -36,7 +37,7 @@ class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
             return false;
         }
 
-        echo $this->templateCompiler->compile($response->template);
+        echo $this->templateCompiler->compile($response);
 
         return true;
     }
