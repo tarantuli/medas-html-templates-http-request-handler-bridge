@@ -3,11 +3,16 @@
 declare(strict_types=1);
 
 use Medas\HtmlTemplatesHttpRequestHandlerBridge\HtmlTemplatesHttpRequestHandlerBridgePackage;
-use Medas\ServiceManager\ServiceManager;
+use Medas\ServiceManager\{ServiceConfig, ServiceManager};
 
 chdir(__DIR__);
 
-require_once 'vendor/autoload.php';
+new ServiceManager(function (): ServiceConfig {
+    $config = new ServiceConfig();
 
-$sm = ServiceManager::get();
-$sm->addPackage(HtmlTemplatesHttpRequestHandlerBridgePackage::instance());
+    $config->addPackages([
+        HtmlTemplatesHttpRequestHandlerBridgePackage::instance(),
+    ]);
+
+    return $config;
+});

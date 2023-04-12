@@ -9,9 +9,8 @@ use Medas\HttpRequestHandler\{Request\Request,
     ResponseHandlerManager,
     ResponseHandlers\HtmlHandler,
     ResponseHandlers\ResponseHandler,
-    ResponseTypes\Response
-};
-use Medas\ServiceManager\Attributes\Service;
+    ResponseTypes\Response};
+use Medas\ServiceManager\Service;
 
 #[Service]
 class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
