@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Medas\HtmlTemplatesHttpRequestHandlerBridge;
 
+use Medas\Core\Attributes\Service;
 use Medas\HtmlTemplates\TemplateCompiler;
 use Medas\HttpRequestHandler\{Request\Request,
     ResponseHandlerManager,
     ResponseHandlers\HtmlHandler,
     ResponseHandlers\ResponseHandler,
     ResponseTypes\Response};
-use Medas\ServiceManager\Service;
 
 #[Service]
 class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
