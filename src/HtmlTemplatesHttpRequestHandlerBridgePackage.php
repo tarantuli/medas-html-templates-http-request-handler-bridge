@@ -15,10 +15,10 @@ class HtmlTemplatesHttpRequestHandlerBridgePackage extends BasePackage
 
     public function dependencies(): array
     {
-        return $this->dependenciesByClass([
-            HtmlTemplatesPackage::class,
-            HttpRequestHandlerPackage::class,
-        ]);
+        return [
+            HtmlTemplatesPackage::instance(),
+            HttpRequestHandlerPackage::instance(),
+        ];
     }
 
     public function sourceDirectory(): string
