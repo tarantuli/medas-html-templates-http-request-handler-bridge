@@ -1,6 +1,10 @@
 {
     "name": "morphp/medas-html-templates-http-request-handler-bridge",
     "description": "Medas bridge between HTML templates and http request handler",
+    "keywords": [
+        "frontend",
+        "http"
+    ],
     "authors": [
         {
             "name": "Patrick Morpey",
