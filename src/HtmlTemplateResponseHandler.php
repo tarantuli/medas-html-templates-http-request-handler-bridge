@@ -6,11 +6,11 @@ namespace Medas\HtmlTemplatesHttpRequestHandlerBridge;
 
 use Medas\Core\Attributes\Service;
 use Medas\HtmlTemplates\TemplateCompiler;
-use Medas\HttpRequestHandler\{Request\Request,
-    ResponseHandlerManager,
+use Medas\HttpRequestHandler\{
+    ResponseHandlerManager\Job,
     ResponseHandlers\HtmlHandler,
-    ResponseHandlers\ResponseHandler,
-    ResponseTypes\Response};
+    ResponseHandlers\ResponseHandler
+};
 
 #[Service]
 class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
@@ -26,17 +26,17 @@ class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
         return -4;
     }
 
-    public function handleResponse(Request $request, Response $response, ResponseHandlerManager $manager): bool
+    public function handleResponse(Job $job): bool
     {
-        if (!$response instanceof TemplateResponse) {
+        if (!$job->response instanceof TemplateResponse) {
             return false;
         }
 
-        if (!$this->isHtmlRequest($request)) {
+        if (!$this->isHtmlRequest($job->request)) {
             return false;
         }
 
-        echo $this->templateCompiler->compile($response);
+        echo $this->templateCompiler->compile($job->response);
 
         return true;
     }
