@@ -7,16 +7,16 @@ namespace Medas\HtmlTemplatesHttpRequestHandlerBridge;
 use Medas\Core\Attributes\Service;
 use Medas\HtmlTemplates\TemplateCompiler;
 use Medas\HttpRequestHandler\{
-    ResponseHandlerManager\Job,
+    ResponseDispatcher\Job,
     ResponseHandlers\HtmlHandler,
     ResponseHandlers\ResponseHandler
 };
 
 #[Service]
-class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
+readonly class HtmlTemplateResponseHandler extends HtmlHandler implements ResponseHandler
 {
     public function __construct(
-        private readonly TemplateCompiler $templateCompiler,
+        private TemplateCompiler $templateCompiler,
     )
     {
     }

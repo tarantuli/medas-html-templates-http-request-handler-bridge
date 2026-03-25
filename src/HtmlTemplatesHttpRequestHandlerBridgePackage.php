@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Medas\HtmlTemplatesHttpRequestHandlerBridge;
 
-use Medas\Core\AsSingleton;
+use Medas\Core\{AsSingleton, BasePackage};
 use Medas\HtmlTemplates\HtmlTemplatesPackage;
 use Medas\HttpRequestHandler\HttpRequestHandlerPackage;
-use Medas\ServiceManager\BasePackage;
 
 class HtmlTemplatesHttpRequestHandlerBridgePackage extends BasePackage
 {

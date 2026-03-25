@@ -1,33 +1,36 @@
 {
-    "name": "morphp/medas-html-templates-http-request-handler-bridge",
-    "description": "Medas bridge between HTML templates and http request handler",
-    "keywords": [
-        "frontend",
-        "http"
-    ],
-    "authors": [
-        {
-            "name": "Patrick Morpey",
-            "email": "patrick@morphp.nl"
-        }
-    ],
-    "type": "library",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-        "morphp/medas-core": "dev-dev",
-        "morphp/medas-html-templates": "dev-dev",
-        "morphp/medas-http-request-handler": "dev-dev",
-        "ext-dom": "*"
-    },
-    "require-dev": {
-        "morphp/medas-service-manager": "dev-dev",
-        "phpunit/phpunit": "^9.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "Medas\\HtmlTemplatesHttpRequestHandlerBridge\\": "src/",
-            "Medas\\HtmlTemplatesHttpRequestHandlerBridgeTest\\": "tests/"
-        }
+  "name": "morphp/medas-html-templates-http-request-handler-bridge",
+  "description": "Medas bridge between HTML templates and http request handler",
+  "keywords": [
+    "frontend",
+    "http"
+  ],
+  "authors": [
+    {
+      "name": "Patrick Morpey",
+      "email": "patrick@morphp.nl"
     }
+  ],
+  "type": "library",
+  "require": {
+    "morphp/medas-core": "^3",
+    "morphp/medas-html-templates": "^3",
+    "morphp/medas-http-request-handler": "^3",
+    "ext-dom": "*"
+  },
+  "require-dev": {
+    "morphp/medas-object-instantiator": "^3",
+    "morphp/medas-service-manager": "^3",
+    "phpunit/phpunit": "^10"
+  },
+  "autoload": {
+    "psr-4": {
+      "Medas\\HtmlTemplatesHttpRequestHandlerBridge\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Medas\\HtmlTemplatesHttpRequestHandlerBridgeTest\\": "tests/"
+    }
+  }
 }
